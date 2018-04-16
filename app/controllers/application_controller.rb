@@ -29,7 +29,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/recipes' do
-    @recipe = Recipe.create
+    @recipe = Recipe.new
     @recipe.name = params[:name]
     @recipe.ingredients = params[:ingredients]
     @recipe.cook_time = params[:cook_time]
