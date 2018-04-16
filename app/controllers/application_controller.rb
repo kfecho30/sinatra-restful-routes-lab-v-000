@@ -29,8 +29,10 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/recipes' do
-    binding.pry
-    Recipe.new(params[:name], params[:ingredients], params[:cook_time])
+    @recipe = Recipe.new(params[:name], params[:ingredients], params[:cook_time])
+    @recipe.name = params[:name]
+    @recipe.ingredients = params[:ingredients]
+    @recipe.cook_time = params[:cook_time]
     redirect to '/recipes'
   end
 
