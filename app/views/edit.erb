@@ -4,5 +4,6 @@
 <p>Edit Ingredients:</p>
 <form action="/recipe/<%=@recipe.id%>" method="post">
   <input id="hidden" type="hidden" name="_method" value="patch">
+  <input type="text" name="name" id="name">
   <input type="text" name="ingredients">
 </form>
