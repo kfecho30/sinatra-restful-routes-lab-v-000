@@ -11,7 +11,7 @@ class ApplicationController < Sinatra::Base
     @recipes = Recipe.all
     erb :index
   end
-  
+
   get '/recipes/new' do
     erb :new
   end
@@ -24,6 +24,10 @@ class ApplicationController < Sinatra::Base
   get '/recipes/:id/edit' do
     @recipe = Recipe.find(params[:id])
     erb :edit
+  end
+
+  post '/recipes' do
+    Recipe.new(params[:name], params[:ingredients], params[:cook_time])
   end
 
   delete '/recipes/:id/delete' do
