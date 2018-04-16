@@ -23,6 +23,7 @@ class ApplicationController < Sinatra::Base
   end
 
   delete '/recipes/:id/delete' do
+    Recipe.find(params[:id]).destroy
   end
 
   get '/recipes/new' do
