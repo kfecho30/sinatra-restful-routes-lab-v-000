@@ -28,6 +28,7 @@ class ApplicationController < Sinatra::Base
 
   post '/recipes' do
     Recipe.new(params[:name], params[:ingredients], params[:cook_time])
+    redirect to '/recipes'
   end
 
   delete '/recipes/:id/delete' do
