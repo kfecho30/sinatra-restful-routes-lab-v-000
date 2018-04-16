@@ -22,6 +22,9 @@ class ApplicationController < Sinatra::Base
     erb :edit
   end
 
+  delete '/recipes/:id/delete' do
+  end
+
   get '/recipes/new' do
     erb :new_recipe
   end
